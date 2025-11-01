@@ -288,6 +288,7 @@ impl GraphicalReportHandler {
             Some(Severity::Error) | None => self.theme.styles.error,
             Some(Severity::Warning) => self.theme.styles.warning,
             Some(Severity::Advice) => self.theme.styles.advice,
+            Some(Severity::Unknown) => self.theme.styles.unknown,
         };
         let mut header = String::new();
         let mut need_newline = is_nested;
@@ -335,6 +336,7 @@ impl GraphicalReportHandler {
             Some(Severity::Error) | None => (self.theme.styles.error, &self.theme.characters.error),
             Some(Severity::Warning) => (self.theme.styles.warning, &self.theme.characters.warning),
             Some(Severity::Advice) => (self.theme.styles.advice, &self.theme.characters.advice),
+            Some(Severity::Unkonwn) => (self.theme.styles.unknown, &self.theme.characters.advice),
         };
 
         let initial_indent = format!("  {} ", severity_icon.style(severity_style));
@@ -457,6 +459,7 @@ impl GraphicalReportHandler {
                 Some(Severity::Error) | None => self.theme.styles.error,
                 Some(Severity::Warning) => self.theme.styles.warning,
                 Some(Severity::Advice) => self.theme.styles.advice,
+                Some(Severity::Unknown) => self.theme.styles.unknown,
             };
 
             let mut inner_renderer = self.clone();
@@ -519,6 +522,7 @@ impl GraphicalReportHandler {
                         Some(Severity::Error) | None => write!(f, "Error: ")?,
                         Some(Severity::Warning) => write!(f, "Warning: ")?,
                         Some(Severity::Advice) => write!(f, "Advice: ")?,
+                        Some(Severity::Unknown) => {}
                     };
                     inner_renderer.render_header(f, rel, true)?;
                     let src = rel.source_code().or(parent_src);

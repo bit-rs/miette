@@ -91,6 +91,8 @@ pub struct ThemeStyles {
     pub warning: Style,
     /// Style to apply to things highlighted as "advice".
     pub advice: Style,
+    /// Style to apply to things highlighted as "unknown".
+    pub unknown: Style,
     /// Style to apply to the help text.
     pub help: Style,
     /// Style to apply to filenames/links/URLs.
@@ -114,6 +116,7 @@ impl ThemeStyles {
             error: style().fg_rgb::<255, 30, 30>(),
             warning: style().fg_rgb::<244, 191, 117>(),
             advice: style().fg_rgb::<106, 159, 181>(),
+            unknown: style().fg_rgb::<106, 159, 181>(),
             help: style().fg_rgb::<106, 159, 181>(),
             link: style().fg_rgb::<92, 157, 255>().underline().bold(),
             linum: style().dimmed(),
@@ -192,6 +195,7 @@ pub struct ThemeCharacters {
     pub error: String,
     pub warning: String,
     pub advice: String,
+    pub unknown: String,
 }
 
 impl ThemeCharacters {
@@ -219,6 +223,7 @@ impl ThemeCharacters {
             error: "×".into(),
             warning: "⚠".into(),
             advice: "☞".into(),
+            unknown: "💡".into(),
         }
     }
 
