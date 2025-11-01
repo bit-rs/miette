@@ -134,6 +134,7 @@ impl ThemeStyles {
             error: style().red(),
             warning: style().yellow(),
             advice: style().cyan(),
+            unknown: style().cyan(),
             help: style().cyan(),
             link: style().cyan().underline().bold(),
             linum: style().dimmed(),
@@ -151,6 +152,7 @@ impl ThemeStyles {
             error: style(),
             warning: style(),
             advice: style(),
+            unknown: style(),
             help: style(),
             link: style(),
             linum: style(),
@@ -251,6 +253,7 @@ impl ThemeCharacters {
             error: "💥".into(),
             warning: "⚠️".into(),
             advice: "💡".into(),
+            unknown: "💡".into(),
         }
     }
     /// ASCII-art-based graphical elements. Works well on older terminals.
@@ -277,6 +280,7 @@ impl ThemeCharacters {
             error: "x".into(),
             warning: "!".into(),
             advice: ">".into(),
+            unknown: "?".into(),
         }
     }
 }
