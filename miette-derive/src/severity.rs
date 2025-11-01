@@ -52,9 +52,10 @@ fn get_severity(input: &str, span: Span) -> syn::Result<String> {
         "error" | "err" => Ok("Error".into()),
         "warning" | "warn" => Ok("Warning".into()),
         "advice" | "adv" | "info" => Ok("Advice".into()),
+        "unknown" => Ok("Unknown".into()),
         _ => Err(syn::Error::new(
             span,
-            "Invalid severity level. Only Error, Warning, and Advice are supported.",
+            "Invalid severity level. Only Error, Warning, Advice and Unknown are supported.",
         )),
     }
 }

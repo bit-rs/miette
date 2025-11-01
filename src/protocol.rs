@@ -187,6 +187,8 @@ impl From<Box<dyn std::error::Error + Send + Sync>> for Box<dyn Diagnostic + Sen
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 #[derive(Default)]
 pub enum Severity {
+    /// Unknown.
+    Unknown,
     /// Just some help. Here's how you could be doing it better.
     Advice,
     /// Warning. Please take note.

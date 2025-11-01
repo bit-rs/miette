@@ -91,6 +91,7 @@ impl NarratableReportHandler {
             Some(Severity::Error) | None => "error",
             Some(Severity::Warning) => "warning",
             Some(Severity::Advice) => "advice",
+            Some(Severity::Unknown) => "unknown",
         };
         writeln!(f, "    Diagnostic severity: {}", severity)?;
         Ok(())
@@ -136,6 +137,7 @@ impl NarratableReportHandler {
                     Some(Severity::Error) | None => write!(f, "Error: ")?,
                     Some(Severity::Warning) => write!(f, "Warning: ")?,
                     Some(Severity::Advice) => write!(f, "Advice: ")?,
+                    Some(Severity::Unknown) => {}
                 };
                 self.render_header(f, rel)?;
                 writeln!(f)?;
