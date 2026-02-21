@@ -189,6 +189,8 @@ impl From<Box<dyn std::error::Error + Send + Sync>> for Box<dyn Diagnostic + Sen
 pub enum Severity {
     /// Hint.
     Hint,
+    /// Bug.
+    Bug,
     /// Just some help. Here's how you could be doing it better.
     Advice,
     /// Warning. Please take note.

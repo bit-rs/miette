@@ -80,6 +80,7 @@ impl JSONReportHandler {
             Some(Severity::Warning) => "warning",
             Some(Severity::Advice) => "advice",
             Some(Severity::Hint) => "hint",
+            Some(Severity::Bug) => "bug",
         };
         write!(f, r#""severity": "{:}","#, severity)?;
         if let Some(cause_iter) = diagnostic

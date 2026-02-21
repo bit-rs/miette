@@ -93,6 +93,8 @@ pub struct ThemeStyles {
     pub advice: Style,
     /// Style to apply to things highlighted as "hint".
     pub hint: Style,
+    /// Style to apply to things highlighted as "bug".
+    pub bug: Style,
     /// Style to apply to the help text.
     pub help: Style,
     /// Style to apply to filenames/links/URLs.
@@ -117,6 +119,7 @@ impl ThemeStyles {
             warning: style().fg_rgb::<244, 191, 117>(),
             advice: style().fg_rgb::<106, 159, 181>(),
             hint: style().fg_rgb::<161, 252, 3>(),
+            bug: style().fg_rgb::<204, 2, 59>(),
             help: style().fg_rgb::<106, 159, 181>(),
             link: style().fg_rgb::<92, 157, 255>().underline().bold(),
             linum: style().dimmed(),
@@ -135,6 +138,7 @@ impl ThemeStyles {
             warning: style().yellow(),
             advice: style().cyan(),
             hint: style().green(),
+            bug: style().red(),
             help: style().cyan(),
             link: style().cyan().underline().bold(),
             linum: style().dimmed(),
@@ -153,6 +157,7 @@ impl ThemeStyles {
             warning: style(),
             advice: style(),
             hint: style(),
+            bug: style(),
             help: style(),
             link: style(),
             linum: style(),
@@ -226,6 +231,7 @@ impl ThemeCharacters {
             warning: "⚠".into(),
             advice: "☞".into(),
             hint: "💡".into(),
+            bug: "🐞".into(),
         }
     }
 
@@ -254,6 +260,7 @@ impl ThemeCharacters {
             warning: "⚠️".into(),
             advice: "💡".into(),
             hint: "💡".into(),
+            bug: "🐞".into(),
         }
     }
     /// ASCII-art-based graphical elements. Works well on older terminals.
@@ -281,6 +288,7 @@ impl ThemeCharacters {
             warning: "!".into(),
             advice: ">".into(),
             hint: "#".into(),
+            bug: "@".into(),
         }
     }
 }
