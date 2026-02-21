@@ -203,6 +203,7 @@ pub struct ThemeCharacters {
     pub warning: String,
     pub advice: String,
     pub hint: String,
+    pub bug: String,
 }
 
 impl ThemeCharacters {
